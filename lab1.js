@@ -57,7 +57,8 @@ assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.'
  it failed.
 */
 
-//your code goes here
+assert("zebra" === "zebra", 'these strings are equal, so this assert will pass.');
+assert("zebra" === "rhino", 'thse strings are not equal, so this assert will fail.');
 
 /* ========================================================================
 ----------------- Meerkats (20 points total)-------------------------------
@@ -77,12 +78,24 @@ var sentence2 = 'Come over here so you can scratch my belly.';
 // TODO: part #1: use a for loop to replace the words in sentence 1 with
 // 'chirp' (10 points)
 
-// your code goes here
+var words = sentence1.split(" ", 3);
+
+for (i = 0; i < 3; i++)
+{
+	words[i] = "chirp";
+}
 
 // TODO: part #2: use a while or do-while loop to replace the words in sentence 2
 // with 'chirp' (10 points)
 
-// your code goes here
+var words2 = sentence2.split(" ", 9);
+var i = 0;
+
+while (i < 9)
+{
+	words2[i] = "chirp"
+	i++;
+}
 
 // Leave these assertions as-is! If they pass, your code works.
 assert(sentence1 === 'chirp chirp chirp.', 'sentence 1 should have 3 chirps');

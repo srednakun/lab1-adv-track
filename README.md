@@ -14,4 +14,6 @@ comments. Be sure to read everything. Run lab.js with `node lab1.js`.
 
 #### Resources and Collaborators
 
-w3.schools.com - javascript reference
+w3.schools.com - javascript references, string methods, loops
+mdn.com - Math.random() function
+stackoverflow.com - expression inside switch case statement

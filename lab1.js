@@ -58,7 +58,7 @@ assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.'
 */
 
 assert("zebra" === "zebra", 'these strings are equal, so this assert will pass.');
-assert("zebra" === "rhino", 'thse strings are not equal, so this assert will fail.');
+assert("zebra" === "rhino", 'these strings are not equal, so this assert will fail.');
 
 /* ========================================================================
 ----------------- Meerkats (20 points total)-------------------------------
@@ -78,11 +78,17 @@ var sentence2 = 'Come over here so you can scratch my belly.';
 // TODO: part #1: use a for loop to replace the words in sentence 1 with
 // 'chirp' (10 points)
 
-var words = sentence1.split(" ", 3);
+var words1 = sentence1.split(" ", 3);
 
 for (i = 0; i < 3; i++)
 {
-	words[i] = "chirp";
+
+  if (i === 2)
+  {
+    sentence1 = sentence1.replace(words1[i], "chirp.");
+  }
+
+  sentence1 = sentence1.replace(words1[i], "chirp");
 }
 
 // TODO: part #2: use a while or do-while loop to replace the words in sentence 2
@@ -93,8 +99,13 @@ var i = 0;
 
 while (i < 9)
 {
-	words2[i] = "chirp"
-	i++;
+  sentence2 = sentence2.replace(words2[i], "chirp");
+  i++;
+  
+  if (i === 8)
+  {
+    sentence2 = sentence2.replace(words2[i], "chirp.");
+  }
 }
 
 // Leave these assertions as-is! If they pass, your code works.
@@ -112,12 +123,30 @@ assert(sentence2 === 'chirp chirp chirp chirp chirp chirp chirp chirp chirp.',
 */
 
 var favoriteAnimals = ['elephant', 'penguin', 'eagle', 'camel'];
-var nextAnimal;
+var nextAnimal = null;
 
 // TODO: 12 points
 // Assign one of your favorite animals to nextAnimal using Math.random() to pick
 
-// your code goes here
+var randomNumber = Math.random();
+
+for (i = 0; i < favoriteAnimals.length; i++)
+{
+  if (randomNumber < 0.25)
+  {
+    nextAnimal = 'elephant';
+  }
+  else if (randomNumber >= 0.25 && randomNumber < 0.50)
+  {
+    nextAnimal = 'penguin';
+  }
+  else if (randomNumber >= 0.50 && randomNumber < 0.75)
+  {
+    nextAnimal = "eagle";
+  }
+  else
+    nextAnimal = "camel";
+}
 
 assert(nextAnimal, 'assign something to nextAnimal');
 
@@ -135,7 +164,7 @@ assert(nextAnimal, 'assign something to nextAnimal');
 
 // number of times the new caretaker fed the lion. one array entry per day
 var mealsPerDay = [5, 4, 3, 6, 2, 4, 3, 4, 5, 1];
-var tooHungryDay;
+var tooHungryDay = null;
 
 /*
  TODO: 20 points
@@ -146,7 +175,19 @@ var tooHungryDay;
  meals)
 */
 
-// your code goes here
+for (i = 0; i < 10; i++)
+{
+  var meals = mealsPerDay[i];
+  console.log(meals);
+}
+
+var j = 0;
+while (mealsPerDay[j] >= 4)
+{
+  var meals = mealsPerDay[j];
+  j++;     
+}
+tooHungryDay = (j + 1);
 
 assert(tooHungryDay, 'remember to assign the answer to tooHungryDay');
 assert(tooHungryDay < 10, 'the lion is too hungry before the end of the array');

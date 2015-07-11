@@ -57,8 +57,8 @@ assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.'
  it failed.
 */
 
-assert("zebra" === "zebra", 'these strings are equal, so this assert will pass.');
-assert("zebra" === "rhino", 'these strings are not equal, so this assert will fail.');
+assert('zebra' === 'zebra', 'these strings are equal, so this assert will pass.');
+assert('zebra' === 'rhino', 'these strings are not equal, so this assert will fail.');
 
 /* ========================================================================
 ----------------- Meerkats (20 points total)-------------------------------
@@ -78,33 +78,32 @@ var sentence2 = 'Come over here so you can scratch my belly.';
 // TODO: part #1: use a for loop to replace the words in sentence 1 with
 // 'chirp' (10 points)
 
-var words1 = sentence1.split(" ", 3);
+var words1 = sentence1.split(' ', 3);
 
 for (i = 0; i < 3; i++)
 {
 
   if (i === 2)
   {
-    sentence1 = sentence1.replace(words1[i], "chirp.");
+    sentence1 = sentence1.replace(words1[i], 'chirp.');
   }
 
-  sentence1 = sentence1.replace(words1[i], "chirp");
+  sentence1 = sentence1.replace(words1[i], 'chirp');
 }
 
 // TODO: part #2: use a while or do-while loop to replace the words in sentence 2
 // with 'chirp' (10 points)
 
-var words2 = sentence2.split(" ", 9);
+var words2 = sentence2.split(' ', 9);
 var i = 0;
 
 while (i < 9)
 {
-  sentence2 = sentence2.replace(words2[i], "chirp");
+  sentence2 = sentence2.replace(words2[i], 'chirp');
   i++;
-  
   if (i === 8)
   {
-    sentence2 = sentence2.replace(words2[i], "chirp.");
+    sentence2 = sentence2.replace(words2[i], 'chirp.');
   }
 }
 
@@ -142,10 +141,12 @@ for (i = 0; i < favoriteAnimals.length; i++)
   }
   else if (randomNumber >= 0.50 && randomNumber < 0.75)
   {
-    nextAnimal = "eagle";
+    nextAnimal = 'eagle';
   }
   else
-    nextAnimal = "camel";
+  {
+    nextAnimal = 'camel';
+  }
 }
 
 assert(nextAnimal, 'assign something to nextAnimal');
@@ -184,8 +185,7 @@ for (i = 0; i < 10; i++)
 var j = 0;
 while (mealsPerDay[j] >= 4)
 {
-  var meals = mealsPerDay[j];
-  j++;     
+  j++;
 }
 tooHungryDay = (j + 1);
 
